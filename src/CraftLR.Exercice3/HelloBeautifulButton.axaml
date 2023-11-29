@@ -1,5 +1,13 @@
-<Window xmlns="https://github.com/avaloniaui" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="CraftLR.Exercice3.HelloBeautifulButton" Title="Hello Beautiful Button !">
-    <DockPanel VerticalAlignment="Center" HorizontalAlignment="Center">
-
+<Window xmlns="https://github.com/avaloniaui" 
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+        x:Class="CraftLR.Exercice3.HelloBeautifulButton" 
+        Title="Hello Beautiful Button !"
+        Height="300" 
+        Width="300"
+        Background="Gray">
+    <DockPanel HorizontalAlignment="Center" VerticalAlignment="Center" Height="250" Width="250">
+        <Button x:Name="Bouton1">
+            Hello !
+        </Button>
     </DockPanel>
 </Window>
