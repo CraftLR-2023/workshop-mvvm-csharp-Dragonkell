@@ -3,6 +3,7 @@ namespace CraftLR.Exercice7;
 public class HelloButtonViewModel : HelloButtonViewModelBase
 {
     private string _buttonCaption;
+    private bool _isButtonEnabled = true;
     private int _numberOfClicks;
     public HelloButtonViewModel()
     {
@@ -21,9 +22,29 @@ public class HelloButtonViewModel : HelloButtonViewModelBase
         }
     }
 
+    public bool IsButtonEnabled
+    {
+        get => _isButtonEnabled;
+        set
+        {
+            if (_isButtonEnabled == value) return;
+            _isButtonEnabled = value;
+            OnPropertyChanged();
+        }
+    }
+
     public void CountClick()
     {
-        _numberOfClicks++;
-        ButtonCaption = $"{_numberOfClicks} Clicks";
+        if (_numberOfClicks >= 5)
+        {
+            // Empêche de dépasser 5 clicks
+            ButtonCaption = "Suppérieur à 5 clicks";
+            IsButtonEnabled = false;
+        }
+        else
+        {
+            _numberOfClicks++;
+            ButtonCaption = $"{_numberOfClicks} Clicks";
+        }
     }
 }

@@ -1,6 +1,10 @@
 <Window xmlns="https://github.com/avaloniaui"
     xmlns:vm="using:CraftLR.Exercice7"
-    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" x:Class="CraftLR.Exercice7.HelloButton" Title="Hello Button !" Height="100" Width="250">
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    x:Class="CraftLR.Exercice7.HelloButton"
+    Title="Hello Button !"
+    Height="100"
+    Width="250">
 
     <Design.DataContext>
         <!-- This only sets the DataContext for the previewer in an IDE,
@@ -9,7 +13,7 @@
     </Design.DataContext>
 
     <StackPanel>
-        <Button Content="{Binding Path=ButtonCaption}" Command="{Binding CountClick}" />
+        <Button Content="{Binding Path=ButtonCaption}" Command="{Binding CountClick}" IsEnabled="{Binding IsButtonEnabled}"/>
     </StackPanel>
 
 </Window>
